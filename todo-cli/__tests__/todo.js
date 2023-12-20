@@ -11,7 +11,7 @@ const { all, markAsComplete, add, overdue,
     dueToday,
     dueLater } = todoList();
 const thisday = new Date(); 
-const oneD = 60 * 60 * 24 * 1000;
+const OneDay = 60 * 60 * 24 * 1000;
 describe("todoList", () => {
   beforeAll(() => {
     const thisday = new Date();
@@ -19,14 +19,14 @@ describe("todoList", () => {
     add({
       title: "todo",
       completed: false,
-      dueDate: new Date(thisday.getTime() - 1 * oneD).toLocaleDateString(
+      dueDate: new Date(thisday.getTime() - 1 * OneDay).toLocaleDateString(
         "en-CA",
       ),
     });
     add({
       title: "todo2",
       completed: false,
-      dueDate: new Date(thisday.getTime() + 1 * oneD).toLocaleDateString(
+      dueDate: new Date(thisday.getTime() + 1 * OneDay).toLocaleDateString(
         "en-CA",
       ),
     });
@@ -55,7 +55,7 @@ describe("todoList", () => {
     add({
         title: "todo",
         completed: false,
-        dueDate: new Date(thisday.getTime() - 1 * oneD).toLocaleDateString(
+        dueDate: new Date(thisday.getTime() - 1 * OneDay).toLocaleDateString(
           "en-CA",
         ),
       });
@@ -75,7 +75,7 @@ describe("todoList", () => {
     add({
         title: "todo2",
         completed: false,
-        dueDate: new Date(thisday.getTime() + 2 * oneD)
+        dueDate: new Date(thisday.getTime() + 2 * OneDay)
         .toISOString()
         .slice(0, 10),
       });
